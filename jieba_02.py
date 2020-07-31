@@ -11,7 +11,7 @@ import jieba.posseg as pseg
 jieba.add_word('石墨烯')
 jieba.add_word('凱特琳')
 
-jieba.load_userdict("userdict.txt")
+jieba.load_userdict("../data/userdict.txt")
 jieba.del_word('自定义词')
 
 test_sent = (
