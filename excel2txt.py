@@ -13,12 +13,12 @@ from operator import itemgetter
 # 读取数据,筛选大类是环境卫生的数据
 df = pd.read_excel('../data/总表6.23-1.xlsx', sheet_name='区市县派',usecols=[6, 7, 8, 11])
 ds = df[df[df.columns[0]].notnull()] # 选出大类不为空的数据
-da = ds[ds[ds.columns[0]].str.contains('环境卫生')] #选出大类数据
+da = ds[ds[ds.columns[0]].str.contains('环境保护')] #选出大类数据
 db = da[da[da.columns[1]].notnull()] # 选出小类不为空的数据
-db = db[db[db.columns[1]].str.contains('环卫作业')] #选出小类数据
+db = db[db[db.columns[1]].str.contains('噪音')] #选出小类数据
 dc = db[db[db.columns[2]].notnull()] # 选出细类不为空的数据
 dc = dc[dc[dc.columns[2]].str.contains('垃圾收运')] #选出细类数据
-data = dc[dc.columns[3]].values #使用来电内容进行分词词频统计
+data = db[db.columns[3]].values #使用来电内容进行分词词频统计
 # 结巴分词
 words = []
 strs = []
